@@ -1,0 +1,310 @@
+/* Couche spécifique au portfolio.
+   Les couleurs viennent de theme.css via --bg, --fg, --card, --border,
+   --muted, --accent, etc. */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 var(--font-sans);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+body > * { width: auto; }
+
+.hero {
+  min-height: 66vh;
+  padding: 1rem 1.5rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 12% 6%, rgba(var(--accent-rgb), .17), transparent 34%),
+    linear-gradient(180deg, var(--card), var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-nav {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  color: var(--fg) !important;
+  text-decoration: none;
+  font-weight: 750;
+  letter-spacing: .02em;
+}
+
+.theme-buttons { flex-wrap: wrap; justify-content: flex-end; }
+.theme-buttons button { font: inherit; }
+.theme-buttons .theme-label { font-size: .82rem; }
+
+.hero-inner {
+  width: min(100%, 1120px);
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 .55rem;
+  font-size: .78rem;
+  font-weight: 760;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1, h2 {
+  line-height: 1.08;
+  border: 0;
+  padding: 0;
+}
+
+h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7rem);
+  letter-spacing: -.055em;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  letter-spacing: -.03em;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 1.5rem 0 2rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  color: var(--muted);
+}
+
+.portfolio-button {
+  display: inline-block;
+  padding: .78rem 1.15rem;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast) !important;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 5px 18px rgba(var(--accent-rgb), .16);
+}
+
+.portfolio-button:hover { filter: brightness(1.04); }
+.portfolio-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.container {
+  width: min(calc(100% - 2rem), 1120px);
+  margin: 0 auto;
+}
+
+.about,
+.contact {
+  max-width: 780px;
+  padding: 5rem 0;
+}
+
+.about p:not(.eyebrow),
+.contact p:not(.eyebrow) {
+  font-size: 1.08rem;
+}
+
+.gallery-section {
+  padding: 4rem 0 6rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(250px, .8fr);
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.section-heading > p {
+  color: var(--muted);
+  margin: 0 0 .35rem;
+}
+
+.carousel { position: relative; }
+
+.carousel-track {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.slide {
+  display: none;
+  margin: 0;
+}
+
+.slide.active { display: block; }
+
+.slide img {
+  width: 100%;
+  height: min(72vh, 760px);
+  object-fit: contain;
+  border-radius: 0;
+  background:
+    linear-gradient(rgba(var(--accent-rgb), .035), rgba(var(--accent-rgb), .035)),
+    var(--bg);
+  cursor: zoom-in;
+}
+
+.slide figcaption {
+  margin: 0;
+  padding: 1rem 1.25rem 1.15rem;
+  color: var(--muted);
+  text-align: left;
+  font-size: .94rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font: 2rem/1 var(--font-sans);
+  color: var(--fg);
+  cursor: pointer;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.carousel-btn:hover { background: var(--hover-bg); }
+.carousel-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+.dots {
+  display: flex;
+  gap: .55rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+}
+
+.dot.active { background: var(--accent); }
+.dot:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+.portfolio-footer {
+  margin: 0;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+#lightbox {
+  width: min(96vw, 1400px);
+  max-width: 1400px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 0 20px 80px rgba(0,0,0,.28);
+}
+
+#lightbox::backdrop { background: rgba(0, 0, 0, .82); }
+
+#lightbox img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+#lightbox-caption {
+  margin: .8rem .25rem .2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+#lightbox-close {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  width: 42px;
+  height: 42px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--fg);
+  font: 1.7rem/1 var(--font-sans);
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .hero {
+  background:
+    radial-gradient(circle at 12% 6%, rgba(var(--accent-rgb), .22), transparent 34%),
+    linear-gradient(180deg, #151c29, var(--bg));
+}
+
+html[data-theme="academic"] .hero-inner,
+html[data-theme="academic"] .section-heading,
+html[data-theme="academic"] .about,
+html[data-theme="academic"] .contact {
+  letter-spacing: .005em;
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 56vh; padding-inline: 1rem; }
+  .portfolio-nav { align-items: flex-start; padding-top: .25rem; }
+  .theme-buttons { gap: .25rem; }
+  .theme-buttons .theme-label { display: none; }
+  .section-heading { grid-template-columns: 1fr; gap: .5rem; }
+  .slide img { height: 62vh; }
+  .carousel-btn { width: 44px; height: 44px; }
+  .carousel-btn.prev { left: .65rem; }
+  .carousel-btn.next { right: .65rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
