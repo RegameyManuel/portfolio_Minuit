@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de dessins et d'illustrations">
+  <title>Portfolio — Dessins & illustrations</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Dessins & illustrations</h1>
+      <p class="intro">
+        Une sélection de dessins, croquis et recherches personnelles.
+      </p>
+      <a class="button" href="#galeries">Voir les dessins</a>
+    </div>
+  </header>
+
+  <main id="galeries" class="container">
+    <section class="about">
+      <h2>À propos</h2>
+      <p>
+        Je suis élève de troisième et je m'intéresse particulièrement au dessin
+        et à l'illustration. Ce portfolio présente une sélection de mes travaux,
+        de mes recherches et de mes créations personnelles.
+      </p>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Galerie 01</p>
+          <h2>Personnages</h2>
+        </div>
+        <p>Recherches de personnages, expressions, poses et illustrations.</p>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" aria-label="Image précédente">‹</button>
+
+        <div class="carousel-track">
+          <figure class="slide active">
+            <img src="images/personnage-01.svg" alt="Dessin de personnage 1">
+            <figcaption>Personnage — étude 01</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/personnage-02.svg" alt="Dessin de personnage 2">
+            <figcaption>Personnage — étude 02</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/personnage-03.svg" alt="Dessin de personnage 3">
+            <figcaption>Personnage — étude 03</figcaption>
+          </figure>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Image suivante">›</button>
+        <div class="dots" aria-label="Navigation du carrousel"></div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Galerie 02</p>
+          <h2>Croquis & recherches</h2>
+        </div>
+        <p>Études, esquisses, essais de composition et travaux préparatoires.</p>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" aria-label="Image précédente">‹</button>
+
+        <div class="carousel-track">
+          <figure class="slide active">
+            <img src="images/croquis-01.svg" alt="Croquis 1">
+            <figcaption>Croquis — recherche 01</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/croquis-02.svg" alt="Croquis 2">
+            <figcaption>Croquis — recherche 02</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/croquis-03.svg" alt="Croquis 3">
+            <figcaption>Croquis — recherche 03</figcaption>
+          </figure>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Image suivante">›</button>
+        <div class="dots" aria-label="Navigation du carrousel"></div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Galerie 03</p>
+          <h2>Illustrations</h2>
+        </div>
+        <p>Travaux terminés et compositions personnelles.</p>
+      </div>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" aria-label="Image précédente">‹</button>
+
+        <div class="carousel-track">
+          <figure class="slide active">
+            <img src="images/illustration-01.svg" alt="Illustration 1">
+            <figcaption>Illustration — création 01</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/illustration-02.svg" alt="Illustration 2">
+            <figcaption>Illustration — création 02</figcaption>
+          </figure>
+          <figure class="slide">
+            <img src="images/illustration-03.svg" alt="Illustration 3">
+            <figcaption>Illustration — création 03</figcaption>
+          </figure>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Image suivante">›</button>
+        <div class="dots" aria-label="Navigation du carrousel"></div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Stage d'observation</h2>
+      <p>
+        Ce portfolio accompagne une recherche de stage d'observation de troisième
+        dans le domaine de l'illustration et de la création graphique.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Portfolio personnel — Dessins & illustrations</p>
+  </footer>
+
+  <dialog id="lightbox">
+    <button id="lightbox-close" aria-label="Fermer">×</button>
+    <img id="lightbox-image" src="" alt="">
+    <p id="lightbox-caption"></p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

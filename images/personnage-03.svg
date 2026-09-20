@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#ece8e2"/>
+  <rect x="90" y="90" width="1220" height="720" rx="30" fill="#ffffff" stroke="#d7d0c8" stroke-width="3"/>
+  <text x="700" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="58" fill="#252525">Personnage 03</text>
+  <text x="700" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#77716a">Remplacer cette image par un dessin</text>
+</svg>

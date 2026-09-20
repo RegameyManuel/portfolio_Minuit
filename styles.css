@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f7f4ef;
+  --surface: #ffffff;
+  --text: #1f1f1f;
+  --muted: #6d6a66;
+  --line: #ded8d0;
+  --accent: #7a5cff;
+  --max: 1120px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero {
+  min-height: 62vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(122, 92, 255, .14), transparent 35%),
+    linear-gradient(180deg, #ffffff, #f7f4ef);
+}
+
+.hero-inner {
+  width: min(100%, var(--max));
+}
+
+.eyebrow {
+  margin: 0 0 .5rem;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1, h2 {
+  line-height: 1.1;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7rem);
+  letter-spacing: -.05em;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 1.5rem 0 2rem;
+  font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  padding: .85rem 1.2rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--max));
+  margin: auto;
+}
+
+.about,
+.contact {
+  max-width: 760px;
+  padding: 5rem 0;
+}
+
+.about h2,
+.contact h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+}
+
+.gallery-section {
+  padding: 3rem 0 6rem;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 6vw, 4.8rem);
+}
+
+.section-heading > p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+
+.slide {
+  display: none;
+  margin: 0;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: min(72vh, 760px);
+  object-fit: contain;
+  background: #ece8e2;
+  cursor: zoom-in;
+}
+
+.slide figcaption {
+  padding: 1rem 1.25rem 1.2rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
+}
+
+.carousel-btn.prev {
+  left: 1rem;
+}
+
+.carousel-btn.next {
+  right: 1rem;
+}
+
+.dots {
+  display: flex;
+  gap: .55rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c9c2ba;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--text);
+}
+
+footer {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+#lightbox {
+  width: min(96vw, 1400px);
+  border: 0;
+  border-radius: 18px;
+  padding: 1rem;
+  background: #111;
+  color: white;
+}
+
+#lightbox::backdrop {
+  background: rgba(0, 0, 0, .82);
+}
+
+#lightbox img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+#lightbox-caption {
+  margin: .8rem .25rem .2rem;
+  text-align: center;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 52vh;
+  }
+
+  .section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .slide img {
+    height: 62vh;
+  }
+
+  .carousel-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
